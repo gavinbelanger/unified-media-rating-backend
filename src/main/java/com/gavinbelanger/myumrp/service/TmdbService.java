@@ -31,12 +31,32 @@ public class TmdbService {
                 .bodyToMono(String.class);
     }
 
-    public Mono<String> seachTv(String query) {
+    public Mono<String> searchTv(String query) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/serach/tv")
+                        .path("/search/tv")
                         .queryParam("api_key", tmdbApiKey)
                         .queryParam("query", query)
+                        .build())
+                .retrieve()
+                .bodyToMono(String.class);
+    }
+
+    public Mono<String> getMovieById(String movieId) {
+        return webClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/movie/" + movieId)
+                        .queryParam("api_key", tmdbApiKey)
+                        .build())
+                .retrieve()
+                .bodyToMono(String.class);
+    }
+
+    public Mono<String> getTvById(String tvId) {
+        return webClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/tv/" + tvId)
+                        .queryParam("api_key", tmdbApiKey)
                         .build())
                 .retrieve()
                 .bodyToMono(String.class);
