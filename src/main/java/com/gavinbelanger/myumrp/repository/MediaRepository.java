@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface MediaRepository extends JpaRepository<Media, Long> {
     // Optional custom queries can be added here later
     Optional<Media> findByApiId(String apiId);
-    Optional<Media> findByApiIdAndMediaType(String apiId, MediaType mediaType);
+    Optional<Media> findByApiIdAndMediaType(String apiId, MediaType type);
 }
 

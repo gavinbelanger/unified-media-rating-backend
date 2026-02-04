@@ -35,7 +35,7 @@ public class MediaImportService {
         media.setTitle(obj.getString("title"));
         media.setPosterUrl("https://image.tmdb.org/t/p/w500" + obj.optString("poster_path", null));
         media.setDescription(obj.optString("overview", null));
-        media.setType(MediaType.MOVIE);
+        media.setMediaType(MediaType.MOVIE);
 
         return mediaRepository.save(media);
     }
@@ -54,7 +54,7 @@ public class MediaImportService {
         media.setTitle(obj.getString("name"));
         media.setPosterUrl("https://image.tmdb.org/t/p/w500" + obj.optString("poster_path", null));
         media.setDescription(obj.optString("overview", null));
-        media.setType(MediaType.TV);
+        media.setMediaType(MediaType.TV);
 
         return mediaRepository.save(media);
     }
@@ -73,7 +73,7 @@ public class MediaImportService {
         media.setTitle(obj.getString("name"));
         media.setPosterUrl(obj.optString("background_image", null));
         media.setDescription(obj.optString("description_raw", null));
-        media.setType(MediaType.GAME);
+        media.setMediaType(MediaType.GAME);
 
         return mediaRepository.save(media);
     }

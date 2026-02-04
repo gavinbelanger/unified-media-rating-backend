@@ -16,7 +16,7 @@ public class Media {
     private String posterUrl;
 
     @Enumerated(EnumType.STRING)
-    private MediaType type;
+    private MediaType mediaType;
 
     @Column(columnDefinition = "TEXT")
     private String description;
