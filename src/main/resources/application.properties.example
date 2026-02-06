@@ -1,11 +1,10 @@
 spring.application.name=MyUMRP
 spring.datasource.url=jdbc:postgresql://localhost:5432/universalmediaapp
 spring.datasource.username=postgres
-spring.datasource.password=Enzombie86!
+spring.datasource.password=YOUR_PASSWORD_HERE
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-tmdb.api.key=b29bd67811747094d10bae55158f75fb
-rawg.api.key=4a294a969688497886a246a82e024814
-
+tmdb.api.key=YOUR_TMDB_API_KEY_HERE
+rawg.api.key=YOUR_RAWG_API_KEY_HERE
