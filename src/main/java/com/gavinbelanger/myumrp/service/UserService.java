@@ -37,6 +37,9 @@ public class UserService {
         User user = optionalUser.get();
         return passwordEncoder.matches(rawPassword, user.getPassword());
     }
+
+    public User getUserByUsername(String username) throws Exception {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new Exception("User not found"));
+    }
 }
-
-
